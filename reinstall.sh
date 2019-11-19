@@ -4,16 +4,19 @@ echo 'Uninstalling stuff'
 pip uninstall -y nemo_toolkit
 pip uninstall -y nemo_asr
 pip uninstall -y nemo_nlp
+pip uninstall -y nemo_tts
 pip uninstall -y nemo_simple_gan
 
 echo 'Installing stuff'
 cd nemo
-pip install -e .
+python setup.py develop
 cd ../collections/nemo_asr
-pip install -e .
+python setup.py develop
 cd ../nemo_nlp
-pip install -e .
+python setup.py develop
+cd ../nemo_tts
+python setup.py develop
 cd ../nemo_simple_gan
-pip install -e .
+python setup.py develop
 
 echo 'All done!'
